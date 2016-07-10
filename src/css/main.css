@@ -1,0 +1,174 @@
+@charset'UTF-8';
+/**
+ * 
+ * @authors Leon
+ * @date    2016-07-10 16:09:38
+ * @version $Id$
+ */
+/*公共部分*/
+/* 默认iphone4、iphone5的320px分辨率 */
+html {
+	font-size: 32px;
+}
+/* 大部分安卓机的360分辨率 */
+@media screen and (min-device-width:360px) {
+	html {
+		font-size: 36px;
+	}
+}
+/* iphone6的375分辨率 */
+@media screen and (min-device-width:375px) {
+	html {
+		font-size: 37.5px;
+	}
+}
+/*iphone6plus的414px分辨率及平板 */
+@media screen and (min-device-width:414px) {
+	html {
+		font-size: 41.4px;
+	}
+}
+body {
+	min-height: 100vh;
+}
+header, footer {
+	overflow: hidden;
+	box-sizing: border-box;
+}
+header {
+	height: 1.4rem;
+	background-color: #000;
+}
+.logo {
+	width: .975rem;
+	margin: .3125rem .5625rem;
+}
+.menu-toggle-btn {
+	width: .65rem;
+	margin: .45rem .5625rem;
+}
+nav {
+	position: absolute;
+	z-index: 2;
+	top: 1.4rem;
+	right: 0;
+	left: 0;
+	visibility: hidden;
+	height: calc(100vh - 1.4rem);
+	transition: all .2s ease-out;
+	transform: scaleY(0);
+	transform-origin: left top;
+	background-color: rgba(0, 0, 0, .75);
+}
+nav.open {
+	visibility: visible;
+	transform: scaleY(1);
+}
+.menu-list li {
+	height: 1.0833333333333333rem;
+	font-size: .45rem;
+	line-height: 1.0833333333333333rem;
+	text-align: right;
+}
+.menu-list a {
+	display: block;
+	padding-right: .5625rem;
+	color: #fff;
+}
+.menu-list .current a {
+	color: #d2b638;
+}
+.menu-list li::after {
+	display: block;
+	width: 100%;
+	height: 1px;
+	content: '';
+	transform: scaleY(0.5);
+	transform-origin: left top;
+	background-color: rgba(255, 255, 255, 0.5);
+}
+.friend-link {
+	height: 2.125rem;
+	font-size: 0;
+	text-align: center;
+	background-color: #efefef;
+}
+.friend-link a {
+	display: inline-block;
+	width: 1.25rem;
+	height: 1.25rem;
+	margin: .43875rem .2916666666666667rem;
+	border-radius: 100%;
+	background: #fff no-repeat center/50%;
+}
+
+.friend-link a:nth-child(1) {
+	background-image: url('../images/icon_tmall.png');
+}
+.friend-link a:nth-child(2) {
+	background-image: url('../images/icon_casio.png');
+}
+.friend-link a:nth-child(3) {
+	background-image: url('../images/icon_weixin.png');
+}
+.friend-link a:nth-child(4) {
+	background-image: url('../images/icon_webo.png');
+}
+.friend-link a:nth-child(5) {
+	background-image: url('../images/icon_qq.png');
+}
+.friend-link .active {
+	background-color: #d61d00;
+}
+.foot {
+	overflow: hidden;
+	height: .6875rem;
+	font-size: .25rem;
+	line-height: .6875rem;
+	text-align: center;
+	color: #fff;
+	background: #303030;
+}
+.foot img {
+	height: .25rem;
+	margin: .21875rem 0 0 .5625rem;
+}
+.foot p {
+	margin-right: .5625rem;
+}
+.flex {
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display:         flex;
+}
+.flex-v {
+	flex-direction: column;
+	-webkit-box-orient: vertical;
+	-webkit-flex-direction: column;
+	-ms-flex-direction: column;
+}
+.flex-1 {
+	-webkit-box-flex: 1;
+	-webkit-flex: 1;
+	-ms-flex: 1;
+	flex: 1;
+}
+.flex-align-center {
+	-webkit-box-align: center;
+	-webkit-align-items: center;
+	-ms-flex-align: center;
+	align-items: center;
+}
+.flex-pack-center {
+	-webkit-box-pack: center;
+	-webkit-justify-content: center;
+	-ms-flex-pack: center;
+	justify-content: center;
+}
+.flex-pack-justify {
+	-webkit-box-pack: justify;
+	-webkit-justify-content: space-between;
+	-ms-flex-pack: justify;
+	justify-content: space-between;
+}

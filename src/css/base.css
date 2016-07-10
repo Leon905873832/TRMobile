@@ -1,0 +1,87 @@
+@charset "UTF-8";
+/*base style for css file*/
+html,body,div,span,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,samp,small,strike,strong,sub,sup,tt,var,b,i,dl,dt,dd,ol,ul,li,fieldset,form,label,legend{
+	margin:0;
+	padding:0;
+	border:0;
+	outline:0;
+	vertical-align:baseline;
+	background:transparent;
+	font-family:Helvetica;	
+}
+input,textarea,select,label {
+	display: inline-block;
+	font-family:Helvetica;
+	vertical-align: middle;
+}
+
+table,caption,tbody,tfoot,thead,tr,th,td{
+	/*border-collapse:collapse;8*/
+  	margin:0;
+	padding:0;
+	outline:0;
+	vertical-align:baseline;
+	background:transparent;
+	font-family:Helvetica;
+}
+
+ul,ol {
+	list-style:none;
+}
+blockquote,q{
+	quotes:none;
+}
+blockquote:before,blockquote:after,q:before,q:after{
+	content:'';
+	content:none;
+}
+
+/*remember to define focus styles!*/
+:focus{
+	outline:0;
+}
+
+/*remember to highlight inserts somehow!*/
+ins{
+	text-decoration:none;
+}
+del{
+	text-decoration:line-through;
+}
+
+/*tables still need 'cellspacing="0"' in the markup */
+table{
+	border-collapse:collapse;	
+}
+
+a {
+	text-decoration: none;
+	color:#414141;
+}
+a:hover {
+	text-decoration: none;
+}
+
+/*去掉苹果安卓系统点击时的灰色遮盖和边框*/
+a,button,input,textarea{-webkit-tap-highlight-color: rgba(0,0,0,0);}
+
+.fr {
+	float:right;
+}
+
+.fl {
+	float:left;
+}
+
+.clear {
+	clear:both;
+	font-size:0;
+	line-height:0;
+}
+.clearfix:after {
+	content: ".";
+	display: block;
+	height: 0;
+	visibility: hidden;
+	clear: both;
+}
