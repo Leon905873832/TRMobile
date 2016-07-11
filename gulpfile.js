@@ -173,7 +173,10 @@ gulp.task('reload', function () {
     livereload.listen();
     gulp.watch(['src/*.html'], function(file){  
         livereload.changed(file.path);  
-    });  
+    }); 
+    gulp.watch(['src/css/*.css'], function(file){  
+        livereload.changed(file.path);  
+    });
 });
 
 gulp.task('default', ['watchjs', 'watchcss', 'watchimage', 'watchcopy', 'watchtemplates']);

@@ -29,7 +29,7 @@ html {
 	}
 }
 body {
-	min-height: 100vh;
+	height: 100vh;
 }
 header, footer {
 	overflow: hidden;
@@ -83,7 +83,7 @@ nav.open {
 	width: 100%;
 	height: 1px;
 	content: '';
-	transform: scaleY(0.5);
+	transform: scaleY(0.3);
 	transform-origin: left top;
 	background-color: rgba(255, 255, 255, 0.5);
 }
@@ -123,18 +123,13 @@ nav.open {
 .foot {
 	overflow: hidden;
 	height: .6875rem;
-	font-size: .25rem;
-	line-height: .6875rem;
 	text-align: center;
 	color: #fff;
 	background: #303030;
 }
-.foot img {
-	height: .25rem;
-	margin: .21875rem 0 0 .5625rem;
-}
 .foot p {
-	margin-right: .5625rem;
+	font-size: .25rem;
+	line-height: .6875rem;
 }
 .flex {
 	display: -webkit-box;
@@ -171,4 +166,66 @@ nav.open {
 	-webkit-justify-content: space-between;
 	-ms-flex-pack: justify;
 	justify-content: space-between;
+}
+
+/***********首页页面主体部分***********/
+.wrap {
+	overflow-y:auto;
+	-webkit-overflow-scrolling:touch;
+}
+main {
+	min-height: calc(100vh - 4.2125rem);
+}
+.swiper-container {
+    width: 100%;
+    height: auto;
+}
+.swiper-container img {
+	display: block;
+	width: 100%;
+}
+.tr-panel {
+	padding: 0 6.25% 1.14583rem;
+}
+.tr-panel-title {
+	font-size: 0;
+	line-height: 0;
+}
+.tr-panel-title img {
+	display: block;
+	margin: 0.8235rem auto;
+	width: 3.375rem;
+}
+.tr-panel-img {
+	display: block;
+	width: 100%;
+}
+.news-panel {
+	background: url('../images/bg_news.jpg') no-repeat center top/100% 100%;
+}
+.panel-news-text {
+	font-size: 0.4rem;
+	line-height: 1.4;
+	text-align: justify;
+	margin: 0.46875rem 0 0.20833rem;
+}
+.btn-more {
+	display: block;
+	width: 3.59375rem;
+	height: 0.9375rem;
+	line-height: 0.9375rem;
+	background-color: #000;
+	color: #fff;
+	text-align: center;
+	font-size: .5rem;
+	letter-spacing: .2rem;
+}
+
+.beauty-panel {
+	background: url('../images/bg_beauty.png') repeat-y left top;
+	background-size: 100%;
+}
+.club-panel {
+	background: url('../images/bg_club.jpg') repeat center;
+	background-size: 13%;
 }
