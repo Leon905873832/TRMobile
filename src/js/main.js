@@ -6,21 +6,6 @@
  */
 
 // 定义的公用方法
-var clubData = {
-	list: [
-		{
-			src: 'images/club_item_img.jpg',
-			pro: '3,193',
-			msg: '1,193',
-			link: '693',
-			title: '我爱美丽',
-			text: ['美丽从来与外表无关，它是内心积极的态度', 'EX-TR600 遇见更美丽的自己！'],
-			href: '#'
-		}
-	]
-}
-var clubItem = template('club-item', clubData);
-document.getElementById('club-activity-list').innerHTML = clubItem;
 var Util = (function(){
 	var query = function(selector, context){
 		/**
@@ -33,8 +18,21 @@ var Util = (function(){
 		return Array.prototype.slice.call(elements);
 	}
 
+	var tpl = function (arg) {
+		/**
+		 * 根据数据编译html模板，与ajax配合使用比较方便
+		 * 先决条件：依赖与artTemplate.js插件
+		 * 参数是个对象，期望接收tplId，wrapId，和data三个字段
+		 * tplId是模板的id，wrapId是需要填充内容的元素id，data是请求到的数据
+		*/
+		var arg = arg || {};
+		var html = template(arg.tplId, arg.data);
+		document.getElementById(arg.wrapId).innerHTML = html;
+	}
+
 	return {
-		query: query
+		query: query,
+		tpl: tpl
 	}
 })();
 
@@ -56,6 +54,7 @@ document.addEventListener('DOMContentLoaded', function(){
 	// 入口函数
 	var main = function () {
 		effect();
+		builder();
 	}
 
 	// 页面效果相关
@@ -76,19 +75,41 @@ document.addEventListener('DOMContentLoaded', function(){
 				DOM.oNav.classList.remove('open');
 			}, false)
 		});
-
-		// 首页banner图
-		var mySwiper = new Swiper ('.swiper-container', {
-		    direction: 'horizontal',
-		    loop: true,
-		    autoplay: 2000,
-		    speed: 600,
-		    autoplayDisableOnInteraction: false,
-		    // 如果需要分页器
-		    pagination: '.swiper-pagination',
-		  });
-
 	}
+
+	// 构建页面相关函数
+	var builder = function () {
+		// 首页 绽放社区 版块的数据，需要根据后台传值确定
+		var clubData = {
+			list: [
+				{
+					src: 'images/club_item_img.jpg',
+					pro: '3,193',
+					msg: '1,193',
+					link: '693',
+					title: '我爱美丽',
+					text: ['美丽从来与外表无关，它是内心积极的态度', 'EX-TR600 遇见更美丽的自己！'],
+					href: '#'
+				},
+				{
+					src: 'images/club_item_img.jpg',
+					pro: '3,193',
+					msg: '1,193',
+					link: '693',
+					title: '我爱美丽',
+					text: ['美丽从来与外表无关，它是内心积极的态度', 'EX-TR600 遇见更美丽的自己！'],
+					href: '#'
+				}
+			]
+		}
+
+		// 编译生成绽放社区的html
+		Util.tpl({
+			tplId: 'club-item',
+			wrapId: 'club-activity-list',
+			data: clubData
+		});
+	}	
 
 	// 执行入口函数
 	main();

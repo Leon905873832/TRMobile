@@ -176,13 +176,8 @@ nav.open {
 main {
 	min-height: calc(100vh - 4.2125rem);
 }
-.swiper-container {
-    width: 100%;
-    height: auto;
-}
-.swiper-container img {
+video {
 	display: block;
-	width: 100%;
 }
 .tr-panel {
 	padding: 0 6.25% 1.14583rem;

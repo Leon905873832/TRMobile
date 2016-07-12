@@ -40,24 +40,10 @@
 	<!-- 主体部分开始 -->
     <div class="wrap flex-1">
 		<main>
-			<!-- banner图 -->
-	    	<div class="swiper-container">
-			    <div class="swiper-wrapper">
-			        <div class="swiper-slide">
-			        	<img src="images/banner.jpg" alt="banner">
-			        </div>
-			        <div class="swiper-slide">
-			        	<img src="images/banner.jpg" alt="banner">
-			        </div>
-			        <div class="swiper-slide">
-			        	<img src="images/banner.jpg" alt="banner">
-			        </div>
-			    </div>
-			    <!-- 如果需要分页器 -->
-			    <div class="swiper-pagination"></div>
-			</div>
-			<!-- banner图结束 -->
-
+			<!-- 公司视频 -->
+			<video src="video/branding.mp4" controls width="100%" poster="images/banner.jpg">
+				您的浏览器太老了，需要升级
+			</video>
 			<!-- 新闻动态部分 -->
 			<div class="tr-panel news-panel">
 				<h2 class="tr-panel-title">
@@ -89,30 +75,7 @@
 					<img src="images/club_title.png" alt="绽放社区">
 				</h2>
 				<ul id="club-activity-list">
-					<!-- <li>
-						<img src="images/club_item_img.jpg" alt="活动图片" class="tr-panel-img">
-						<div class="msg-num-bar">
-							<span class="icon-pro">3,193</span>
-							<span class="icon-msg">1,193</span>
-							<span class="icon-link">693</span>
-						</div>
-						<h3>#我爱美丽#</h3>
-						<p>美丽从来与外表无关，它是内心积极的态度</p>
-						<p>EX-TR600 遇见更美丽的自己！</p>
-						<a href="#" class="btn-more btn-club-more">遇见更美的自己</a>
-					</li>
-					<li>
-						<img src="images/club_item_img.jpg" alt="活动图片" class="tr-panel-img">
-						<div class="msg-num-bar">
-							<span class="icon-pro">3,193</span>
-							<span class="icon-msg">1,193</span>
-							<span class="icon-link">693</span>
-						</div>
-						<h3>#我爱美丽#</h3>
-						<p>美丽从来与外表无关，它是内心积极的态度</p>
-						<p>EX-TR600 遇见更美丽的自己！</p>
-						<a href="#" class="btn-more btn-club-more">遇见更美的自己</a>
-					</li> -->
+					<!-- 此处内容动态生成 -->
 				</ul>
 			</div>
 			<a href="#" class="btn-panel-more"><span>+</span>显示更多内容</a>
@@ -135,6 +98,7 @@
     </div>
     <!-- 主体部分结束 -->
 	
+	<!--  下面这个<script>是社区版块的html模板，不是js，type类型是“text/html”,不要改！！！-->
 	<script type="text/html" id="club-item">
 		{{each list as value}}
 	        <li>
@@ -146,9 +110,9 @@
 				</div>
 				<h3>#{{value.title}}#</h3>
 				<div>
-					{{each value.text as text}}
-						<p>{{i}}:{{text}}</p>
-					{{each}}
+					{{each value.text as text i}}
+						<p>{{text}}</p>
+					{{/each}}
 				</div>
 				<a href="{{value.href}}" class="btn-more btn-club-more">遇见更美的自己</a>
 			</li>
