@@ -27,7 +27,10 @@ var Util = (function(){
 		*/
 		var arg = arg || {};
 		var html = template(arg.tplId, arg.data);
-		document.getElementById(arg.wrapId).innerHTML = html;
+		var oWrap = document.getElementById(arg.wrapId);
+		if (oWrap) {
+			oWrap.innerHTML = html;
+		}
 	}
 
 	return {
@@ -43,11 +46,13 @@ document.addEventListener('DOMContentLoaded', function(){
 		var oMenu = document.getElementsByClassName('menu-list')[0];
 		var oNav = oMenu.parentNode;
 		var oMenuItem = Util.query('li', oMenu);
+		var oClubMenu = document.getElementsByClassName('club-menu')[0];
 		return {
 			oMenuToggle: oMenuToggle,
 			oMenu: oMenu,
 			oNav: oNav,
-			oMenuItem: oMenuItem
+			oMenuItem: oMenuItem,
+			oClubMenu: oClubMenu
 		}
 	})();
 
@@ -75,6 +80,24 @@ document.addEventListener('DOMContentLoaded', function(){
 				DOM.oNav.classList.remove('open');
 			}, false)
 		});
+
+		// 首页banner图
+		var trNewsSwiper = new Swiper ('.swiper-container', {
+		    direction: 'horizontal',
+		    loop: true,
+		    // 如果需要分页器
+		    pagination: '.swiper-pagination',
+		  });
+
+		// TR社区页的导航
+		DOM.oClubMenu.addEventListener('click',function(event){
+			var obj = event.target;
+			var siblings = this.children;
+			for (var i = 0, length = siblings.length; i < length; i++) {
+				siblings[i].classList.remove('current');
+			}
+			obj.classList.add('current');
+		},false);
 	}
 
 	// 构建页面相关函数

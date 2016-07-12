@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+<title>首页</title>
+<meta name="format-detection" content="telephone=no" />
+<meta name="format-detection" content="email=no" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black" /><!-- 可选default、black、black-translucent -->
+<meta name="msapplication-tap-highlight" content="no">
+<meta name="description" content="">
+<meta name="keywords" content="">
+<link href="css/base.css" rel="stylesheet">
+<link rel="stylesheet" href="css/swiper.css">
+<link href="css/main.css" rel="stylesheet">
+</head>
+<body class="flex flex-v">
+	<!-- 页头开始 -->
+    <header>
+		<img src="images/logo.png" alt="logo" class="logo fl">
+		<img src="images/icon_menu.png" class="menu-toggle-btn fr">
+    </header>
+    <!-- 页头结束 -->
+
+	<!-- 导航部分开始 -->
+	<nav>
+		<ul class="menu-list">
+			<li class="current"><a href="#">首页</a></li>
+			<li><a href="#">TR品牌</a></li>
+			<li><a href="#">TR产品</a></li>
+			<li><a href="#">TR动态</a></li>
+			<li><a href="#">TR社区</a></li>
+			<li><a href="#">TR注册</a></li>
+			<li><a href="#">TR登录</a></li>
+		</ul>
+	</nav>
+	<!-- 导航部分结束 -->
+
+	<!-- 主体部分开始 -->
+    <div class="wrap flex-1">
+		<main class="club-page">
+			<ul class="club-menu flex">
+				<li class="current flex-2">热门话题</li>
+				<li class="flex-1">闺蜜</li>
+				<li class="flex-1">搭配</li>
+				<li class="flex-1">美妆</li>
+				<li class="flex-2">Life Style</li>
+			</ul>
+			<ul class="club-item">
+				<li>
+
+				</li>
+				<li>
+					<h3>#我爱美丽#拒绝空想与懒惰</h3>
+					<div class="club-active-bar">
+						<img src="images/club_page_img2.jpg" alt="活动图片">
+						<img src="images/club_page_img3.jpg" alt="活动图片">
+						<img src="images/club_page_img4.jpg" alt="活动图片">
+						<img src="images/club_page_img5.jpg" alt="活动图片">
+					</div>
+					<div class="msg-num-bar">
+						<span class="icon-pro">3,193</span>
+						<span class="icon-msg">1,193</span>
+						<span class="icon-link">693</span>
+					</div>
+				</li>
+			</ul>
+		</main>
+		<!-- 页脚部分开始 -->
+	    <footer>
+	    	<div class="friend-link">
+				<a href="#" class="active"></a>
+				<a href="#"></a>
+				<a href="#"></a>
+				<a href="#"></a>
+				<a href="#"></a>
+	    	</div>
+	    	<div class="foot">
+				<p>&copy; 2016 CASIO(China) Co., Ltd.  |  沪ICP备14020594号</p>
+	    	</div>
+	    </footer>
+	    <!-- 页脚部分结束 -->
+    </div>
+    <!-- 主体部分结束 -->
+	
+	<!--  下面这个<script>是社区版块的html模板，不是js，type类型是“text/html”,不要改！！！-->
+	<script type="text/html" id="club-item">
+		{{each list as value}}
+	        <li>
+				<img src="{{value.src}}" alt="活动图片" class="tr-panel-img">
+				<div class="msg-num-bar">
+					<span class="icon-pro">{{value.pro}}</span>
+					<span class="icon-msg">{{value.msg}}</span>
+					<span class="icon-link">{{value.link}}</span>
+				</div>
+				<h3>#{{value.title}}#</h3>
+				<div>
+					{{each value.text as text i}}
+						<p>{{text}}</p>
+					{{/each}}
+				</div>
+				<a href="{{value.href}}" class="btn-more btn-club-more">遇见更美的自己</a>
+			</li>
+	    {{/each}}
+	</script>
+
+	<!-- 引用的js -->
+	<script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
+	<script type="text/javascript" src="js/swiper-3.3.1.jquery.min.js"></script>
+	<script type="text/javascript" src="js/template.js"></script>
+    <script type="text/javascript" src="js/main.js"></script>
+</body>
+</html>
