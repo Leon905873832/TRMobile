@@ -194,7 +194,7 @@ main {
 .tr-panel-title img {
 	display: block;
 	margin: 0.8235rem auto;
-	width: 3.375rem;
+	height: 0.6rem;
 }
 .tr-panel-img {
 	display: block;
@@ -210,15 +210,11 @@ main {
 	margin: 0.46875rem 0 0.20833rem;
 }
 .btn-more {
-	display: block;
-	width: 3.59375rem;
-	height: 0.9375rem;
-	line-height: 0.9375rem;
+	display: inline-block;
+	padding: 0.15rem 0.25rem;
 	background-color: #000;
 	color: #fff;
-	text-align: center;
-	font-size: .5rem;
-	letter-spacing: .2rem;
+	font-size: .4375rem;
 }
 
 .beauty-panel {
@@ -228,4 +224,69 @@ main {
 .club-panel {
 	background: url('../images/bg_club.jpg') repeat center;
 	background-size: 13%;
+	padding-bottom: 1px;
+}
+.msg-num-bar {
+	border-bottom: 1px solid #a3a3a3;
+	font-size: 0;
+	padding: 0.6rem 0 0.4rem;
+}
+.icon-pro, .icon-msg, .icon-link {
+	padding-left: 0.8rem;
+	padding-top: 2px;
+	margin-right: 0.66667rem;
+	line-height: 1;
+	font-size: 0.5rem;
+	color: #666;
+	background: no-repeat left center/contain;
+}
+.icon-pro {
+	background-image: url('../images/icon_hand_pro.png');
+	color: #d2b638;
+}
+.icon-msg {
+	background-image: url('../images/icon_message.png');
+}
+.icon-link {
+	background-image: url('../images/icon_link.png');
+}
+#club-activity-list li {
+	border: 1px solid #cfcfcf;
+	background-color: #fff;
+	padding: 0.3125rem 0.4375rem 0.8rem;
+	font-size: 0;
+	margin-bottom: 0.3125rem;
+}
+#club-activity-list h3 {
+	font-size: 0.625rem;
+	color: #666;
+	font-weight: normal;
+	line-height: 1.4;
+
+	margin-top: 0.25rem;
+}
+#club-activity-list p {
+	font-size: 0.3125rem;
+	color: #666;
+	line-height: 2;
+}
+.btn-club-more {
+	margin-top: 0.125rem;
+}
+.btn-panel-more {
+	display: block;
+	text-align: center;
+	font-size: 0.5rem;
+	color: #333;
+	font-weight: bold;
+	margin: 1.5em 0;
+}
+.btn-panel-more span {
+	display: inline-block;
+	border: 1px solid #333;
+	width: 0.5625rem;
+	height: 0.5625rem;
+	line-height: 0.5625rem;
+	text-align: center;
+	margin-right: 0.25rem;
 }

@@ -68,7 +68,7 @@
 				<p class="panel-news-text">
 					踏入春花烂漫的五月，仿佛整个世界都明亮起来。五月的风温暖和煦，五月的水澄澈明净，五月的玫瑰花醉人心脾。五月是个浪漫美好的季节，无论是5月8日母亲节对母亲的祝福与感恩，还是为朋友、恋人送上爱的告白，520表白喜欢的人，大声说出我爱你，拥有温暖而甜蜜的美好瞬间。因为爱，一生一世。5月13日，全球限量1314套甜蜜登场。
 				</p>
-				<a href="#" class="btn-more">了解详情</a>
+				<a href="#" class="btn-more">了 解 详 情</a>
 			</div>
 			<!-- 新闻动态部分结束 -->
 
@@ -88,7 +88,19 @@
 					绽放社区
 					<img src="images/club_title.png" alt="绽放社区">
 				</h2>
-				<ul>
+				<ul id="club-activity-list">
+					<!-- <li>
+						<img src="images/club_item_img.jpg" alt="活动图片" class="tr-panel-img">
+						<div class="msg-num-bar">
+							<span class="icon-pro">3,193</span>
+							<span class="icon-msg">1,193</span>
+							<span class="icon-link">693</span>
+						</div>
+						<h3>#我爱美丽#</h3>
+						<p>美丽从来与外表无关，它是内心积极的态度</p>
+						<p>EX-TR600 遇见更美丽的自己！</p>
+						<a href="#" class="btn-more btn-club-more">遇见更美的自己</a>
+					</li>
 					<li>
 						<img src="images/club_item_img.jpg" alt="活动图片" class="tr-panel-img">
 						<div class="msg-num-bar">
@@ -99,10 +111,11 @@
 						<h3>#我爱美丽#</h3>
 						<p>美丽从来与外表无关，它是内心积极的态度</p>
 						<p>EX-TR600 遇见更美丽的自己！</p>
-						<a href="#" class="btn-more">遇见更美的自己</a>
-					</li>
+						<a href="#" class="btn-more btn-club-more">遇见更美的自己</a>
+					</li> -->
 				</ul>
 			</div>
+			<a href="#" class="btn-panel-more"><span>+</span>显示更多内容</a>
 			<!-- 社区部分结束 -->
 		</main>
 		<!-- 页脚部分开始 -->
@@ -122,9 +135,30 @@
     </div>
     <!-- 主体部分结束 -->
 	
+	<script type="text/html" id="club-item">
+		{{each list as value}}
+	        <li>
+				<img src="{{value.src}}" alt="活动图片" class="tr-panel-img">
+				<div class="msg-num-bar">
+					<span class="icon-pro">{{value.pro}}</span>
+					<span class="icon-msg">{{value.msg}}</span>
+					<span class="icon-link">{{value.link}}</span>
+				</div>
+				<h3>#{{value.title}}#</h3>
+				<div>
+					{{each value.text as text}}
+						<p>{{i}}:{{text}}</p>
+					{{each}}
+				</div>
+				<a href="{{value.href}}" class="btn-more btn-club-more">遇见更美的自己</a>
+			</li>
+	    {{/each}}
+	</script>
+
 	<!-- 引用的js -->
 	<script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
 	<script type="text/javascript" src="js/swiper-3.3.1.jquery.min.js"></script>
+	<script type="text/javascript" src="js/template.js"></script>
     <script type="text/javascript" src="js/main.js"></script>
 </body>
 </html>

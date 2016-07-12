@@ -6,7 +6,21 @@
  */
 
 // 定义的公用方法
-
+var clubData = {
+	list: [
+		{
+			src: 'images/club_item_img.jpg',
+			pro: '3,193',
+			msg: '1,193',
+			link: '693',
+			title: '我爱美丽',
+			text: ['美丽从来与外表无关，它是内心积极的态度', 'EX-TR600 遇见更美丽的自己！'],
+			href: '#'
+		}
+	]
+}
+var clubItem = template('club-item', clubData);
+document.getElementById('club-activity-list').innerHTML = clubItem;
 var Util = (function(){
 	var query = function(selector, context){
 		/**
