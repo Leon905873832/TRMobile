@@ -26,10 +26,12 @@ var Util = (function(){
 		 * tplId是模板的id，wrapId是需要填充内容的元素id，data是请求到的数据
 		*/
 		var arg = arg || {};
-		var html = template(arg.tplId, arg.data);
-		var oWrap = document.getElementById(arg.wrapId);
-		if (oWrap) {
-			oWrap.innerHTML = html;
+		if (window.template) {
+			var html = template(arg.tplId, arg.data);
+			var oWrap = document.getElementById(arg.wrapId);
+			if (oWrap) {
+				oWrap.innerHTML = html;
+			}
 		}
 	}
 
@@ -65,39 +67,47 @@ document.addEventListener('DOMContentLoaded', function(){
 	// 页面效果相关
 	var effect = function () {
 		// 点击导航按钮，唤出导航菜单
-		DOM.oMenuToggle.addEventListener('click', function(){
-			DOM.oNav.classList.toggle('open');
-		}, false);
+		if (DOM.oMenuToggle) {
+			DOM.oMenuToggle.addEventListener('click', function(){
+				DOM.oNav.classList.toggle('open');
+			}, false);
+		}
 
 		// 点击任意菜单条目，菜单隐藏,并切换当前状态
-		DOM.oMenuItem.forEach(function(obj){
-			obj.addEventListener('click', function(){
-				var siblings = this.parentNode.children;
+		if (DOM.oMenuItem) {
+			DOM.oMenuItem.forEach(function(obj){
+				obj.addEventListener('click', function(){
+					var siblings = this.parentNode.children;
+					for (var i = 0, length = siblings.length; i < length; i++) {
+						siblings[i].classList.remove('current');
+					}
+					this.classList.add('current');
+					DOM.oNav.classList.remove('open');
+				}, false)
+			});
+		}
+
+		// 首页banner图
+		if (window.Swiper) {
+			var trNewsSwiper = new Swiper ('.swiper-container', {
+			    direction: 'horizontal',
+			    loop: true,
+			    // 如果需要分页器
+			    pagination: '.swiper-pagination',
+			 });
+		}
+
+		// TR社区页的导航
+		if (DOM.oClubMenu) {
+			DOM.oClubMenu.addEventListener('click',function(event){
+				var obj = event.target;
+				var siblings = this.children;
 				for (var i = 0, length = siblings.length; i < length; i++) {
 					siblings[i].classList.remove('current');
 				}
-				this.classList.add('current');
-				DOM.oNav.classList.remove('open');
-			}, false)
-		});
-
-		// 首页banner图
-		var trNewsSwiper = new Swiper ('.swiper-container', {
-		    direction: 'horizontal',
-		    loop: true,
-		    // 如果需要分页器
-		    pagination: '.swiper-pagination',
-		  });
-
-		// TR社区页的导航
-		DOM.oClubMenu.addEventListener('click',function(event){
-			var obj = event.target;
-			var siblings = this.children;
-			for (var i = 0, length = siblings.length; i < length; i++) {
-				siblings[i].classList.remove('current');
-			}
-			obj.classList.add('current');
-		},false);
+				obj.classList.add('current');
+			},false);
+		}
 	}
 
 	// 构建页面相关函数
