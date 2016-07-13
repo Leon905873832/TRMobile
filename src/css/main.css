@@ -214,6 +214,13 @@ video {
     width: 100%;
     height: auto;
 }
+.swiper-container.store-swiper {
+	max-height: 4.875rem;
+}
+.swiper-container.store-swiper img {
+	width: 100%;
+	max-height: 4.875rem;
+}
 .tr-panel {
 	padding: 0 6.25% 1.14583rem;
 }
@@ -451,5 +458,140 @@ video {
 
 /***********自拍秘籍***********/
 .beauty {
-	background-color: #ece0e9;
+	background-color: #ece0c9;
+}
+.beauty-menu-bar {
+	height: 1.4rem;
+	background-color: #7e7971;
+	overflow: hidden;
+	padding: 0.42rem 7.1875%;
+	box-sizing: border-box;
+	
+}
+.beauty-menu-bar h1 {
+	font-size: 0.5rem;
+	font-style: italic;
+	color: #fff;
+}
+.beauty-menu li {
+	float: left;
+	color: #fff;
+	font-size: 0.375rem;
+	width: 2.0714285714285716rem;
+	height: 0.6071428571428571rem;
+	line-height: 0.6071428571428571rem;
+	background:url('../images/bg_beauty_menu2.png') no-repeat center/contain;
+	text-align: center;
+}
+.beauty-menu .current {
+	background-image: url('../images/bg_beauty_menu.png');
+}
+.beauty-menu li:last-child {
+	letter-spacing: -0.05em;
+	word-spacing: -0.05em;
+}
+.beauty-detail-bar {
+	padding: 0 7.1875%;
+}
+.beauty-detail-title {
+	font-size: 0;
+	text-align: center;
+	margin: 0.7rem 0 0.5rem;
+}
+.beauty-detail-title img {
+	width: 4.375rem;
+}
+.beauty-detail {
+	font-size: 0;
+}
+.beauty-detail img {
+	width: 50%;
+}
+
+/*********** Exilim Store ************/
+.exilimstore {
+	background-color: #000;
+}
+.store_address {
+	text-align: center;
+	color: #fff;
+	font-size: 0.35rem;
+	background: url('../images/bg_store_adress.png') no-repeat top center/ cover;
+}
+.store_address p {
+	line-height: 3;
+}
+.store_address img {
+	display: block;
+	width: 1.96875rem;
+	margin: 0 auto;
+}
+.store_address-menu {
+	display: inline-block;
+	margin: 0.65625rem 0;
+}
+.store_address li {
+	float: left;
+	padding: 3px 0.3125rem;
+}
+.store_address .current {
+	background-color: #caae3b;
+	position: relative;
+}
+.store_address .current::before {
+	content: '';
+	display: block;
+	width: 0;
+	height: 0;
+	border-width: 6px 4px;
+	border-style: solid;
+	border-color: transparent transparent #caae3b transparent;
+	position: absolute;
+	left: 50%;
+	bottom: 100%;
+	margin-left: -2px;
+}
+
+/************ 最新动态 ***********/
+.dynamic {
+	background: url('../images/bg_club_page.jpg') repeat-y top center/100%;
+}
+.dynamic-panel {
+	padding-top: 1rem;
+}
+.dynamic-list li {
+	margin-bottom: 0.8rem;
+}
+.dynamic-list img {
+	display: block;
+	border: 2px solid #fff;
+	width: 100%;
+}
+.dynamic-list h3 {
+	font-size: 0.5rem;
+}
+hr {
+	border:none;
+	height: 1px;
+	background-color: #9a9998;
+}
+
+/*********** 最新动态详情 ************/
+.page {
+	overflow: hidden;
+	font-size: 0.375rem;
+}
+/*********** 历代机型 ************/
+.video-box {
+	position: relative;
+}
+.video-box .beauty-menu-bar {
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	width: 100%;
+	background-color: rgba(0, 0, 0, 0.75);
+}
+.last-model {
+	background: url('../images/bg_club_page.jpg')repeat-y top center/contain;
 }

@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
-<title>自拍秘籍</title>
+<title>首页</title>
 <meta name="format-detection" content="telephone=no" />
 <meta name="format-detection" content="email=no" />
 <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -12,6 +12,7 @@
 <meta name="description" content="">
 <meta name="keywords" content="">
 <link href="css/base.css" rel="stylesheet">
+<link rel="stylesheet" href="css/swiper.css">
 <link href="css/main.css" rel="stylesheet">
 </head>
 <body class="flex flex-v">
@@ -42,26 +43,28 @@
 
 	<!-- 主体部分开始 -->
     <div class="wrap flex-1">
-		<main class="beauty">
-			<div class="beauty-menu-bar">
-				<h1 class="fl">自拍秘籍</h1>
-				<ul class="beauty-menu fr">
-					<li>产品理念</li>
-					<li class="current">自拍秘籍</li>
-					<li>Exilim Store</li>
-				</ul>
-			</div>
-			<div class="beauty-detail-bar">
-				<h2 class="beauty-detail-title">
-					TR自拍秘籍
-					<img src="images/beauty_detail_title.png" alt="TR自拍秘籍">
-				</h2>
-				<div class="beauty-detail">
-					<img src="images/beauty_detail_img1.png" alt="自拍秘籍">
-					<img src="images/beauty_detail_img2.png" alt="自拍秘籍">
-					<img src="images/beauty_detail_img3.png" alt="自拍秘籍">
-					<img src="images/beauty_detail_img4.png" alt="自拍秘籍">
+		<main>
+			<!-- 公司视频 -->
+			<div class="video-box">
+				<video src="video/branding.mp4" controls width="100%" poster="images/last_model_video.jpg">
+					您的浏览器太老了，需要升级
+				</video>
+				<div class="beauty-menu-bar">
+					<h1 class="fl">最新产品</h1>
+					<ul class="beauty-menu fr">
+						<li>最新产品</li>
+						<li class="current">历代机型</li>
+						<li>限量版</li>
+					</ul>
 				</div>
+			</div>
+
+			<div class="tr-panel last-model">
+				<h2 class="tr-panel-title">
+					历代机型
+					<img src="images/last_model.png" alt="历代机型">
+				</h2>
+				<img src="images/last_model.jpg" alt="历代机型" class="tr-panel-img">
 			</div>
 		</main>
 		<!-- 页脚部分开始 -->
@@ -80,9 +83,32 @@
 	    <!-- 页脚部分结束 -->
     </div>
     <!-- 主体部分结束 -->
+	
+	<!--  下面这个<script>是社区版块的html模板，不是js，type类型是“text/html”,不要改！！！-->
+	<script type="text/html" id="club-item">
+		{{each list as value}}
+	        <li>
+				<img src="{{value.src}}" alt="活动图片" class="tr-panel-img">
+				<div class="msg-num-bar">
+					<span class="icon-pro">{{value.pro}}</span>
+					<span class="icon-msg">{{value.msg}}</span>
+					<span class="icon-link">{{value.link}}</span>
+				</div>
+				<h3>#{{value.title}}#</h3>
+				<div>
+					{{each value.text as text i}}
+						<p>{{text}}</p>
+					{{/each}}
+				</div>
+				<a href="{{value.href}}" class="btn-more btn-club-more">遇见更美的自己</a>
+			</li>
+	    {{/each}}
+	</script>
 
 	<!-- 引用的js -->
 	<script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
+	<script type="text/javascript" src="js/swiper-3.3.1.jquery.min.js"></script>
+	<script type="text/javascript" src="js/template.js"></script>
     <script type="text/javascript" src="js/main.js"></script>
 </body>
 </html>

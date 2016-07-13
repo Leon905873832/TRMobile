@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
-<title>自拍秘籍</title>
+<title>Exilimstore</title>
 <meta name="format-detection" content="telephone=no" />
 <meta name="format-detection" content="email=no" />
 <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -12,6 +12,7 @@
 <meta name="description" content="">
 <meta name="keywords" content="">
 <link href="css/base.css" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="css/swiper.css">
 <link href="css/main.css" rel="stylesheet">
 </head>
 <body class="flex flex-v">
@@ -42,26 +43,39 @@
 
 	<!-- 主体部分开始 -->
     <div class="wrap flex-1">
-		<main class="beauty">
+		<main class="exilimstore">
 			<div class="beauty-menu-bar">
 				<h1 class="fl">自拍秘籍</h1>
 				<ul class="beauty-menu fr">
 					<li>产品理念</li>
-					<li class="current">自拍秘籍</li>
-					<li>Exilim Store</li>
+					<li>自拍秘籍</li>
+					<li class="current">Exilim Store</li>
 				</ul>
 			</div>
-			<div class="beauty-detail-bar">
-				<h2 class="beauty-detail-title">
-					TR自拍秘籍
-					<img src="images/beauty_detail_title.png" alt="TR自拍秘籍">
-				</h2>
-				<div class="beauty-detail">
-					<img src="images/beauty_detail_img1.png" alt="自拍秘籍">
-					<img src="images/beauty_detail_img2.png" alt="自拍秘籍">
-					<img src="images/beauty_detail_img3.png" alt="自拍秘籍">
-					<img src="images/beauty_detail_img4.png" alt="自拍秘籍">
-				</div>
+			<div class="swiper-container store-swiper">
+			    <div class="swiper-wrapper">
+			        <div class="swiper-slide">
+			        	<img src="images/store.png" alt="商店">
+					</div>
+			        <div class="swiper-slide">
+						<img src="images/store.png" alt="商店">
+			        </div>
+			        <div class="swiper-slide">
+						<img src="images/store.png" alt="商店">
+				    </div>
+				</div>    
+			    <!-- 如果需要分页器 -->
+			    <div class="swiper-pagination"></div>
+			</div>
+			<div class="store_address">
+				<p>上海 K11店 | 卢湾区淮海中路300号K11艺术中心B2层229号</p>
+				<img src="images/store_adress.png" alt="地址">
+				<ul class="store_address-menu">
+					<li>广州</li>
+					<li class="current">上海</li>
+					<li>成都</li>
+					<li>北京</li>
+				</ul>
 			</div>
 		</main>
 		<!-- 页脚部分开始 -->
@@ -83,6 +97,7 @@
 
 	<!-- 引用的js -->
 	<script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
+	<script type="text/javascript" src="js/swiper-3.3.1.jquery.min.js"></script>
     <script type="text/javascript" src="js/main.js"></script>
 </body>
 </html>
