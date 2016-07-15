@@ -35,9 +35,27 @@ var Util = (function(){
 		}
 	}
 
+	var isInVisibleArea = function (obj, doc) {
+		var doc = doc || document.documentElement;
+		if (obj) {
+			// 获取浏览器的可视区高度
+			var clientHeight = document.documentElement.clientHeight;
+			// 获取元素距离页面顶端的高度
+			var offsetHeight = obj.offsetTop;
+			// 获取滚动条的高度
+			var scrollTop = doc.scrollTop;
+			if (offsetHeight - scrollTop < clientHeight) {
+				return true;
+			} else {
+				return false
+			}
+		}
+	}
+
 	return {
-		query: query,
-		tpl: tpl
+		query: query,							// 获取元素方法
+		tpl: tpl,								// 编译模板方法
+		isInVisibleArea : isInVisibleArea		// 判断元素是否在可是区域
 	}
 })();
 
@@ -49,12 +67,14 @@ document.addEventListener('DOMContentLoaded', function(){
 		var oNav = oMenu.parentNode;
 		var oMenuItem = Util.query('li', oMenu);
 		var oClubMenu = document.getElementsByClassName('club-menu')[0];
+		var oImgs = document.getElementsByTagName('img');
 		return {
-			oMenuToggle: oMenuToggle,
-			oMenu: oMenu,
-			oNav: oNav,
-			oMenuItem: oMenuItem,
-			oClubMenu: oClubMenu
+			oMenuToggle: oMenuToggle,			// 导航栏菜单按钮
+			oMenu: oMenu,						// 导航菜单
+			oNav: oNav,							// 导航菜单背景层
+			oMenuItem: oMenuItem,				// 导航菜单条目
+			oClubMenu: oClubMenu,				// 社区活动的导航
+			oImgs: oImgs						// 页面内的图片元素
 		}
 	})();
 
@@ -87,7 +107,7 @@ document.addEventListener('DOMContentLoaded', function(){
 			});
 		}
 
-		// 首页banner图
+		// 滑动分页
 		if (window.Swiper) {
 			var trNewsSwiper = new Swiper ('.swiper-container', {
 			    direction: 'horizontal',
@@ -108,6 +128,19 @@ document.addEventListener('DOMContentLoaded', function(){
 				obj.classList.add('current');
 			},false);
 		}
+
+		// 给所有图片添加动画效果
+		/*if (DOM.oImgs) {
+			var oMain = document.getElementsByTagName('main')[0];
+			for(var i = 0, len = DOM.oImgs.length; i < len; i++) {
+				if (Util.isInVisibleArea(DOM.oImgs[i])) {
+					document.body.onscroll = function () {
+						console.log(123);
+						DOM.oImgs[i].classList.add('animated', 'fadeInUp');
+					};
+				}
+			}
+		}*/
 	}
 
 	// 构建页面相关函数
