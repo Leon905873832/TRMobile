@@ -1,6 +1,6 @@
 @charset "UTF-8";
 /*base style for css file*/
-html,body,div,span,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,samp,small,strike,strong,sub,sup,tt,var,b,i,dl,dt,dd,ol,ul,li,fieldset,form,label,legend{
+html,body,div,span,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,samp,small,strike,strong,sub,sup,tt,var,b,i,dl,dt,dd,ol,ul,li,fieldset,form,label,legend, section{
 	margin:0;
 	padding:0;
 	border:0;
