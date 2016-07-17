@@ -31,8 +31,8 @@
 			<li><a href="#">TR产品</a></li>
 			<li><a href="#">TR动态</a></li>
 			<li><a href="#">TR社区</a></li>
-			<li><a href="#">TR注册</a></li>
-			<li><a href="#">TR登录</a></li>
+			<li><a href="#">注册</a></li>
+			<li><a href="#">登录</a></li>
 		</ul>
 		<form id="search-bar">
 			<input type="text" id="search" name="search">
@@ -54,7 +54,7 @@
 					TR动态
 					<img src="images/news-title.png" alt="TR动态">
 				</h2>
-				<div class="swiper-container">
+				<div class="swiper-container animated">
 				    <div class="swiper-wrapper">
 				        <div class="swiper-slide">
 				        	<img src="images/news_img.png" alt="新闻动态" class="tr-panel-img">
@@ -90,7 +90,7 @@
 					自拍秘籍
 					<img src="images/beauty_title.png" alt="自拍秘籍">
 				</h2>
-				<img src="images/beauty.png" alt="自拍秘籍" class="tr-panel-img">
+				<img src="images/beauty.png" alt="自拍秘籍" class="tr-panel-img animated">
 			</div>
 			<!-- 自拍秘籍部分结束 -->
 
@@ -110,7 +110,7 @@
 		<!-- 页脚部分开始 -->
 	    <footer>
 	    	<div class="friend-link">
-				<a href="#" class="active"></a>
+				<a href="#"></a>
 				<a href="#"></a>
 				<a href="#"></a>
 				<a href="#"></a>
@@ -119,6 +119,9 @@
 	    	<div class="foot">
 				<p>&copy; 2016 CASIO(China) Co., Ltd.  |  沪ICP备14020594号</p>
 	    	</div>
+			<a href="javascript:void(0)" class="back-top">
+				<img src="images/icon_up.jpg" alt="回到顶部">
+			</a>
 	    </footer>
 	    <!-- 页脚部分结束 -->
     </div>
@@ -127,7 +130,7 @@
 	<!--  下面这个<script>是社区版块的html模板，不是js，type类型是“text/html”,不要改！！！-->
 	<script type="text/html" id="club-item">
 		{{each list as value}}
-	        <li>
+	        <li class="animated">
 				<img src="{{value.src}}" alt="活动图片" class="tr-panel-img">
 				<div class="msg-num-bar">
 					<span class="icon-pro">{{value.pro}}</span>

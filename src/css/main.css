@@ -29,16 +29,17 @@ html {
 	}
 }
 .animated {
-    -webkit-animation-duration: 1s;
-    animation-duration: 1s;
+    -webkit-animation-duration: 0.5s;
+    animation-duration: 0.5s;
     -webkit-animation-fill-mode: both;
-    animation-fill-mode: both
+    animation-fill-mode: both;
+    opacity: 0;
 }
 @-webkit-keyframes fadeInUp {
     0% {
         opacity: 0;
-        -webkit-transform: translateY(20px);
-        transform: translateY(20px)
+        -webkit-transform: translateY(200px);
+        transform: translateY(200px)
     }
     100% {
         opacity: 1;
@@ -50,9 +51,9 @@ html {
 @keyframes fadeInUp {
     0% {
         opacity: 0;
-        -webkit-transform: translateY(20px);
-        -ms-transform: translateY(20px);
-        transform: translateY(20px)
+        -webkit-transform: translateY(200px);
+        -ms-transform: translateY(200px);
+        transform: translateY(200px)
     }
     100% {
         opacity: 1;
@@ -64,7 +65,7 @@ html {
 
 .fadeInUp {
     -webkit-animation-name: fadeInUp;
-    animation-name: fadeInUp
+    animation-name: fadeInUp;
 }
 
 body {
@@ -74,10 +75,10 @@ body {
     user-select: none;
 }
 header, footer {
-	overflow: hidden;
 	box-sizing: border-box;
 }
 header {
+	overflow: hidden;
 	height: 1.4rem;
 	background-color: #000;
 }
@@ -85,13 +86,16 @@ header {
 	width: .975rem;
 	margin: .3125rem .5625rem;
 }
+footer {
+	position: relative;
+}
 .menu-toggle-btn {
 	width: .65rem;
 	margin: .45rem .5625rem;
 }
 nav {
 	position: absolute;
-	z-index: 2;
+	z-index: 100;
 	top: 1.4rem;
 	right: 0;
 	left: 0;
@@ -166,26 +170,25 @@ nav.open {
 	height: 1.25rem;
 	margin: .43875rem .2916666666666667rem;
 	border-radius: 100%;
-	background: #fff no-repeat center/50%;
+	background: #fff no-repeat center/55%;
 }
 
 .friend-link a:nth-child(1) {
-	background-image: url('../images/icon_tmall.png');
+	background-image: url('../images/icon_casio.png');
+	background-size: 80%;
 }
 .friend-link a:nth-child(2) {
-	background-image: url('../images/icon_casio.png');
+	background-image: url('../images/icon_tmall.png');
 }
 .friend-link a:nth-child(3) {
-	background-image: url('../images/icon_weixin.png');
+	background-image: url('../images/icon_jd.png');
+	background-size: 80%;
 }
 .friend-link a:nth-child(4) {
 	background-image: url('../images/icon_webo.png');
 }
 .friend-link a:nth-child(5) {
-	background-image: url('../images/icon_qq.png');
-}
-.friend-link .active {
-	background-color: #d61d00;
+	background-image: url('../images/icon_weixin.png');
 }
 .foot {
 	overflow: hidden;
@@ -197,6 +200,19 @@ nav.open {
 .foot p {
 	font-size: .25rem;
 	line-height: .6875rem;
+}
+.back-top {
+	position: absolute;
+	width: 0.375rem;
+	height: 0.375rem;
+	bottom: 100%;
+	left: 50%;
+	margin-left: -0.1875rem;
+	overflow: hidden;
+}
+.back-top img {
+	display: block;
+	width: 100%;
 }
 .flex {
 	display: -webkit-box;
@@ -273,7 +289,7 @@ video {
 .tr-panel-title img {
 	display: block;
 	margin: 0.8235rem auto;
-	height: 0.6rem;
+	height: 0.7rem;
 }
 .tr-panel-img {
 	display: block;
@@ -462,6 +478,9 @@ video {
 	font-size: inherit;
 	line-height: 1.125rem;
 	height: 1.125rem;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
 	border-bottom: 1px solid #b0b0b0;
 }
 .club-detail-title p {
@@ -472,29 +491,26 @@ video {
 	position: absolute;
 	height: 1.125rem;
 	background: #000;
-	background:linear-gradient(-65deg,transparent 0.25rem, #000 0) no-repeat left bottom/ 100% 50.5%,
-				linear-gradient(-115deg,transparent 0.25rem, #000 0) no-repeat left top/ 100% 50.5%;
+	background:linear-gradient(-65deg,transparent 0.25rem, #000 0) no-repeat left bottom/ 100% 50.1%,
+				linear-gradient(-115deg,transparent 0.25rem, #000 0) no-repeat left top/ 100% 50.1%;
 	left: 0;
 	top: 0;
 	color: #fff;
 	width: 1.28125rem;
 	font-size: 0;
-	padding: 1px 0.25rem 0;
+	padding: 0 0.25rem;
+	overflow: hidden;
 }
 .date-bar > * {
 	max-width: 1rem;
 	display: block;
+	line-height:1.4;
 }
 .date-bar .day {
 	font-size: 0.375rem;
 }
 .date-bar .month {
-	font-size: 0.25rem;
-}
-.date-bar .style {
-	font-size: 0.1875rem;
-	border-top: 1px solid #868686;
-	line-height: 2;
+	font-size: 0.3125rem;
 }
 
 
@@ -627,12 +643,13 @@ hr {
 .video-box {
 	position: relative;
 }
-.video-box .beauty-menu-bar {
-	position: absolute;
-	left: 0;
-	bottom: 0;
+.banner-box {
+	position: relative;
+	overflow: hidden;
+}
+.banner-box > img {
+	display: block;
 	width: 100%;
-	background-color: rgba(0, 0, 0, 0.75);
 }
 .last-model {
 	background: url('../images/bg_club_page.jpg') repeat-y top center/contain;

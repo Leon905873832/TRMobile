@@ -1,0 +1,463 @@
+/*
+	CASIO Chinese / TR for PC
+*/
+
+/* common */
+
+
+.my_container{
+	width:100%;
+	background-color:#ff0000;
+}
+
+.my_container img{
+	display:block;
+	width:100%;
+}
+
+.my_container{
+	width:100%;
+	font-size:30px;
+	line-height:150%;
+	color:#655846;
+	background:#ffffff;
+}
+
+.my_container#my_toppage .my_wrapper{
+	width:100%;
+	margin:0 auto;
+}
+
+/* topbutton */
+#top_button{
+	position:fixed;
+	right:55px;
+	bottom:55px;
+	z-index:1000;
+}
+
+#top_button img{
+	width:140px;
+	height:140px;
+}
+
+/* toppage */
+.my_container#my_toppage .my_wrapper h2{
+	display:block;
+	width:100%;
+	margin:0 auto;
+	padding-top:25px;
+	padding-bottom:25px;
+}
+
+.my_container#my_toppage .my_wrapper .top_button{
+	width:100%;
+	margin:0 auto;
+}
+
+.my_container#my_toppage .my_wrapper .coming_soon{
+	width:100%;
+	margin:0 auto;
+}
+
+/* bread */
+.my_container .bread_wrapper{
+	position:relative;
+	background:#f3efe4;
+	width:100%;
+	height:45px;
+}
+
+.my_container .bread_wrapper .bread_list{
+	position:relative;
+	width:100%;
+	margin:0 auto;
+}
+
+.my_container .bread_wrapper .bread_list #bread_top{
+}
+.my_container .bread_wrapper .bread_list #bread_appeal{
+	position:absolute;
+	top:0;
+	left:525px;
+}
+.my_container .bread_wrapper .bread_list #bread_lecture{
+	position:absolute;
+	top:0;
+	right:0;
+}
+
+/* appeal:popup */
+.my_container#my_appeal .my_wrapper .popup_circle{
+	width:50%;
+	position:absolute;
+	right:40px;
+	top:0;
+	display:none;
+}
+
+.my_container#my_appeal .my_wrapper .popup_circle#hair,
+.my_container#my_appeal .my_wrapper .popup_circle#eye{
+	top:-450px;
+}
+
+.my_container#my_appeal .my_wrapper .popup_circle#check,
+.my_container#my_appeal .my_wrapper .popup_circle#skin,
+.my_container#my_appeal .my_wrapper .popup_circle#lip{
+	top:800px;
+}
+
+/* appeal/lesson */
+.my_container#my_appeal .my_wrapper,
+.my_container#my_lesson .my_wrapper{
+	width:100%;
+	margin:0 auto;
+	padding-bottom:63px;
+	position:relative;
+}
+
+.my_container .my_wrapper #localmenu_button{
+	position:absolute;
+	right:40px;
+	top:40px;
+	width:11.67%;
+}
+
+.my_container .my_wrapper #localmenu{
+	display:none;
+	position:absolute;
+	right:3%;
+	top:40px;
+	width:93.75%;
+	background:#ffffff;
+	border:#f092b0 6px solid;
+	border-radius:20px;
+	-webkit-border-radius :20px;
+	-moz-border-radius:20px;
+	padding-top:100px;
+	padding-bottom:100px;
+	z-index:100;
+}
+
+.my_container .my_wrapper #localmenu nav{
+	z-index:10;
+}
+
+.my_container .my_wrapper #localmenu #localmenu_close{
+	position:absolute;
+	right:40px;
+	top:40px;
+	width:5.83%;
+	z-index:100;
+}
+
+.my_container#my_appeal .my_wrapper .mainBox,
+.my_container#my_lesson .my_wrapper .mainBox{
+	width:93.75%;
+	margin:0 auto;
+	background:#ffffff;
+}
+
+.my_container#my_appeal .my_wrapper .mainBox #title_lecture1{
+	display:block;
+	width:100%;
+	margin:50px auto 0;
+}
+
+.my_container#my_appeal .my_wrapper .mainBox #title_lecture1_1{
+	display:block;
+	width:100%;
+	margin:50px auto 20px auto;
+}
+
+.my_container#my_appeal .my_wrapper .mainBox #capt{
+	display:block;
+	width:100%;
+	margin:40px auto 0 auto;
+}
+
+.my_container#my_appeal .my_wrapper .mainBox #lecture1_1{
+	display:block;
+	width:100%;
+	margin:40px auto 0;
+}
+.my_container#my_appeal .my_wrapper .mainBox #lecture1_1popup{
+	display:block;
+	position:relative;
+	width:100%;
+	margin:20px auto 0;
+}
+
+.my_container#my_appeal .my_wrapper .mainBox #lecture1_1popup #btn_hair{
+	position:absolute;
+	top:0;
+	left:28.67%;
+	width:16.33%;
+}
+
+.my_container#my_appeal .my_wrapper .mainBox #lecture1_1popup #btn_eye{
+	position:absolute;
+	top:0;
+	right:2.33%;
+	width:16.33%;
+}
+
+.my_container#my_appeal .my_wrapper .mainBox #lecture1_1popup #btn_cheek{
+	position:absolute;
+	bottom:0;
+	left:10.83%;
+	width:16.33%;
+}
+
+.my_container#my_appeal .my_wrapper .mainBox #lecture1_1popup #btn_lip{
+	position:absolute;
+	bottom:0;
+	left:26.33%;
+	width:16.33%;
+}
+
+.my_container#my_appeal .my_wrapper .mainBox #lecture1_1popup #btn_skin{
+	position:absolute;
+	bottom:0;
+	right:7.50%;
+	width:16.33%;
+}
+
+.my_container#my_appeal .my_wrapper .mainBox #title_lecture1_2{
+	display:block;
+	width:100%;
+	margin:70px auto 0;
+}
+
+.my_container#my_appeal .my_wrapper .mainBox #lecture1_2{
+	display:block;
+	width:100%;
+	margin:40px auto 0;
+}
+
+.my_container#my_appeal .my_wrapper .mainBox #text_lecture1_2{
+	display:block;
+	width:100%;
+	margin:21px auto 0;
+	text-align:center;
+}
+
+.my_container#my_appeal .my_wrapper .mainBox #text_lecture1_2 p{
+	text-align:left;
+	margin:0 auto;
+}
+
+.my_container#my_appeal .my_wrapper .mainBox #title_lecture1_3{
+	display:block;
+	width:100%;
+	margin:70px auto 0;
+}
+
+.my_container#my_appeal .my_wrapper .mainBox #lecture1_3{
+	display:block;
+	width:100%;
+	margin:40px auto 0;
+}
+
+.my_container#my_appeal .my_wrapper .mainBox #text_lecture1_3{
+	display:block;
+	width:100%;
+	margin:21px auto 0;
+	text-align:center;
+}
+
+.my_container#my_appeal .my_wrapper .mainBox #text_lecture1_3 p{
+	text-align:left;
+	margin:0 auto;
+}
+
+.my_container#my_appeal .my_wrapper .mainBox #title_lecture2{
+	display:block;
+	width:100%;
+	margin:50px auto 0;
+}
+
+.my_container#my_appeal .my_wrapper .mainBox #uppertext_lecture2_1{
+	display:block;
+	width:100%;
+	margin:50px auto 0;
+	font-size:50px;
+	font-weight:bold;
+	text-align:left;
+	line-height:1.6;
+}
+
+.my_container#my_appeal .my_wrapper .mainBox #title_lecture2_1{
+	display:block;
+	width:100%;
+	margin:50px auto 0;
+}
+
+.my_container#my_appeal .my_wrapper .mainBox #lecture2_1{
+	display:block;
+	width:100%;
+	margin:50px auto 0;
+}
+
+.my_container#my_appeal .my_wrapper .mainBox #title_lecture3{
+	display:block;
+	width:100%;
+	margin:70px auto 0;
+}
+
+.my_container#my_appeal .my_wrapper .mainBox #title_lecture3_1{
+	display:block;
+	width:100%;
+	margin:50px auto 0;
+}
+
+.my_container#my_appeal .my_wrapper .mainBox #lecture3_1{
+	display:block;
+	width:100%;
+	margin:40px auto 0;
+}
+
+.my_container#my_appeal .my_wrapper .mainBox #connect_link{
+	display:block;
+	width:100%;
+	margin:40px auto 0;
+	padding-bottom:80px;
+}
+
+.my_container#my_appeal .my_wrapper .mainBox #connect_link a{
+	display:block;
+	width:43.33%;
+}
+
+.my_container#my_lesson .my_wrapper .mainBox #title_lesson1{
+	display:block;
+	width:100%;
+	margin:50px auto 0;
+}
+
+.my_container#my_lesson .my_wrapper .mainBox #uppertext_lesson1_1{
+	display:block;
+	width:100%;
+	margin:30px auto 0;
+	font-size:50px;
+	font-weight:bold;
+	text-align:center;
+	line-height:1.6;
+}
+
+.my_container#my_lesson .my_wrapper .mainBox #title_lesson1_1{
+	display:block;
+	width:100%;
+	margin:30px auto 0;
+}
+
+.my_container#my_lesson .my_wrapper .mainBox #lesson1_1{
+	display:block;
+	width:100%;
+	margin:30px auto 0;
+}
+
+.my_container#my_lesson .my_wrapper .mainBox #title_lesson2{
+	display:block;
+	width:100%;
+	margin:70px auto 0;
+}
+
+.my_container#my_lesson .my_wrapper .mainBox #uppertext_lesson2_1{
+	display:block;
+	width:100%;
+	margin:30px auto 0;
+	font-size:50px;
+	font-weight:bold;
+	text-align:center;
+	line-height:1.6;
+}
+
+.my_container#my_lesson .my_wrapper .mainBox #title_lesson2_1{
+	display:block;
+	width:100%;
+	margin:70px auto 0;
+}
+
+.my_container#my_lesson .my_wrapper .mainBox #lesson2_1{
+	display:block;
+	width:100%;
+	margin:30px auto 0;
+}
+
+.my_container#my_lesson .my_wrapper .mainBox #title_lesson2_2{
+	display:block;
+	width:100%;
+	margin:100px auto 0;
+}
+
+.my_container#my_lesson .my_wrapper .mainBox #lesson2_2{
+	display:block;
+	width:100%;
+	margin:40px auto 0;
+}
+
+.my_container#my_lesson .my_wrapper .mainBox #title_lesson2_3{
+	display:block;
+	width:100%;
+	margin:70px auto 0;
+}
+
+.my_container#my_lesson .my_wrapper .mainBox #lesson2_3{
+	display:block;
+	width:100%;
+	margin:40px auto 0;
+}
+
+.my_container#my_lesson .my_wrapper .mainBox #title_lesson3{
+	display:block;
+	width:100%;
+	margin:70px auto 0;
+}
+
+.my_container#my_lesson .my_wrapper .mainBox #uppertext_lesson3_1{
+	display:block;
+	width:100%;
+	margin:30px auto 0;
+	font-size:50px;
+	font-weight:bold;
+	text-align:center;
+	line-height:1.6;
+}
+
+.my_container#my_lesson .my_wrapper .mainBox #title_lesson3_1{
+	display:block;
+	width:100%;
+	margin:30px auto 0;
+}
+
+.my_container#my_lesson .my_wrapper .mainBox #lesson3_1{
+	display:block;
+	width:100%;
+	margin:40px auto 0;
+}
+
+.my_container#my_lesson .my_wrapper .mainBox #title_lesson3_2{
+	display:block;
+	width:100%;
+	margin:70px auto 0;
+}
+
+.my_container#my_lesson .my_wrapper .mainBox #lesson3_2{
+	display:block;
+	width:100%;
+	margin:40px auto 0;
+}
+
+.my_container#my_lesson .my_wrapper .mainBox #title_lesson3_3{
+	display:block;
+	width:100%;
+	margin:70px auto 0;
+}
+
+.my_container#my_lesson .my_wrapper .mainBox #lesson3_3{
+	display:block;
+	width:100%;
+	margin:40px auto 0;
+	padding-bottom:100px;
+}

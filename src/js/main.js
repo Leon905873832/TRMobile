@@ -33,6 +33,21 @@ var Util = (function () {
                 oWrap.innerHTML = html;
             }
         }
+    };
+
+    var toggleMenu = function (obj) {
+        /**
+         * 导航菜单的状态切换，
+         * 先决条件：obj是必需参数，且是个Dom元素
+         */
+        obj.addEventListener('click', function (event) {
+            var target = event.target;
+            var siblings = this.children;
+            for (var i = 0, length = siblings.length; i < length; i++) {
+                siblings[i].classList.remove('current');
+            }
+            target.classList.add('current');
+        }, false);
     }
 
     var isInVisibleArea = function (obj, doc) {
@@ -50,12 +65,13 @@ var Util = (function () {
                 return false
             }
         }
-    }
+    };
 
     return {
         query: query,							// 获取元素方法
         tpl: tpl,								// 编译模板方法
-        isInVisibleArea: isInVisibleArea		// 判断元素是否在可是区域
+        isInVisibleArea: isInVisibleArea,		// 判断元素是否在可是区域
+        toggleMenu: toggleMenu
     }
 })();
 
@@ -75,6 +91,10 @@ document.addEventListener('DOMContentLoaded', function () {
         var oPersonalItem = document.getElementById('personal-item');
         var oHeadImage = document.getElementById('head-image');
         var oUpload = document.getElementById('upload');
+        var oStoreAddressMenu = document.getElementsByClassName('store_address-menu')[0];
+        var oBackTop = document.getElementsByClassName('back-top')[0];
+        var oWrap = $('.wrap');
+        var oAnimited = $('.animated');
         return {
             oMenuToggle: oMenuToggle,						// 导航栏菜单按钮
             oMenu: oMenu,									// 导航菜单
@@ -88,14 +108,17 @@ document.addEventListener('DOMContentLoaded', function () {
             oPersonalList: oPersonalList,                   // 个人中心列表项id
             oPersonalItem: oPersonalItem,                   // 个人中心模板id
             oHeadImage: oHeadImage,                         // 上传图片的输入框
-            oUpload: oUpload                                // 实际上传图片的file
+            oUpload: oUpload,                               // 实际上传图片的file
+            oStoreAddressMenu: oStoreAddressMenu,           // Exilimstore的导航条
+            oBackTop: oBackTop,                             // 回到顶部按钮
+            oWrap: oWrap                                    // 页面主体部分的外包装元素
         }
     })();
 
     // 入口函数
     var main = function () {
-        effect();
         builder();
+        effect();
     };
 
     // 页面效果相关
@@ -127,32 +150,23 @@ document.addEventListener('DOMContentLoaded', function () {
                 direction: 'horizontal',
                 loop: true,
                 // 如果需要分页器
-                pagination: '.swiper-pagination',
+                pagination: '.swiper-pagination'
             });
         }
 
         // TR社区页的导航
         if (DOM.oClubMenu) {
-            DOM.oClubMenu.addEventListener('click', function (event) {
-                var obj = event.target;
-                var siblings = this.children;
-                for (var i = 0, length = siblings.length; i < length; i++) {
-                    siblings[i].classList.remove('current');
-                }
-                obj.classList.add('current');
-            }, false);
+            Util.toggleMenu(DOM.oClubMenu);
         }
 
         // 个人中心菜单切换
         if (DOM.oPersonalCenterMenu) {
-            DOM.oPersonalCenterMenu.addEventListener('click', function (event) {
-                var target = event.target;
-                var oLi = target.parentNode.children;
-                for (var i = 0, len = oLi.length; i < len; i++) {
-                    oLi[i].classList.remove('current');
-                }
-                target.classList.add('current');
-            });
+            Util.toggleMenu(DOM.oPersonalCenterMenu);
+        }
+
+        // Exilimstore的导航切换
+        if (DOM.oStoreAddressMenu) {
+            Util.toggleMenu(DOM.oStoreAddressMenu);
         }
 
         // 上传头像的选择框
@@ -161,7 +175,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 DOM.oHeadImage.value = this.value;
             })
         }
-        
+
         // 注册页面的生日选择器
         if (jQuery.mobiscroll) {
             var currYear = (new Date()).getFullYear();
@@ -180,19 +194,27 @@ document.addEventListener('DOMContentLoaded', function () {
             $("#birthday").mobiscroll(opt);
         }
 
+        // 回到顶部
+        if (DOM.oBackTop){
+            DOM.oBackTop.addEventListener('click',function () {
+                DOM.oWrap.animate({'scrollTop': '0'});
+            });
+        }
+
         // 给所有图片添加动画效果
-        /*if (DOM.oImgs) {
-         var oMain = document.getElementsByTagName('main')[0];
-         for(var i = 0, len = DOM.oImgs.length; i < len; i++) {
-         if (Util.isInVisibleArea(DOM.oImgs[i])) {
-         document.body.onscroll = function () {
-         console.log(123);
-         DOM.oImgs[i].classList.add('animated', 'fadeInUp');
-         };
-         }
-         }
-         }*/
-    }
+        var animated = function () {
+            var clientHeight = DOM.oWrap[0].clientHeight;
+            var scrollTop = DOM.oWrap[0].scrollTop;
+            var oAnimited = $(this).find('.animated');
+            oAnimited.each(function () {
+                var offsetTop = this.offsetTop;
+                if(offsetTop - scrollTop + 80 < clientHeight){
+                    $(this).addClass('fadeInUp');
+                }
+            });
+        };
+        DOM.oWrap.on('scroll', animated).trigger('scroll');
+    };
 
     // 构建页面相关函数
     var builder = function () {
